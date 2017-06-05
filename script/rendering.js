@@ -1,6 +1,31 @@
+var URL = "http://deeveadee.my/";
 var table = null;
-var URL = "http://www.deeveadee.fr/";
 var CONTENT = $("#resultat");
+
+$().ready(function () {
+    getDvds();
+});
+
+function getDvds() {
+    $.ajax({
+        url: URL + "dvd/getDvd",
+        async: true,
+        type: "GET",
+        datatype: "json",
+        success: function (data) {
+            for (var i = 0; i < data.length; i++) {
+                createTableDvds();
+            }
+
+
+
+        },
+        error: function () {
+            alert("problème");
+        }
+    });
+}
+
 //Fabrique le rendu (<table>) et l'insere dans la zone prévue (<div id="content"></div>)
 //L'algorythme est découpé en 3 parties 
 function createTableDvds(dvds) {
