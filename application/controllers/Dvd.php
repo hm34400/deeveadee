@@ -44,5 +44,9 @@ class Dvd extends CI_Controller {
             $this->load->view('dvd/success');
         }
     }
+    public function test(){
+        $this->load->helper('url');
+        $this->output->set_output("hello");
+    }
 
 }

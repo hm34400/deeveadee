@@ -52,4 +52,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['ntm'] = 'dvd/add';
 $route['dvd'] = 'dvd';
+$route['test'] = 'dvd/test';
 $route['default_controller'] = 'dvd';
