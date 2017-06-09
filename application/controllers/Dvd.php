@@ -9,7 +9,8 @@ class Dvd extends CI_Controller {
     }
 
     public function index() {
-        $data['title'] = 'DEEVEADEE';
+        $data['title'] = 'Deeveadee';
+        $this->load->helper('url');
         $this->load->view('templates/header', $data);
         $this->load->view('dvd/index', $data);
         $this->load->view('templates/footer');
@@ -48,5 +49,14 @@ class Dvd extends CI_Controller {
         $this->load->helper('url');
         $this->output->set_output("hello");
     }
-
+    
+    public function listeDvd($nb = 10, $debut = 0){
+        $this->load->helper('url');
+        return $this->db->select('*')
+                   ->from($this->table)
+                   ->limit($nb, $debut)
+                   ->order_by('id', 'desc')
+                   ->get()
+                   ->result();
+    }
 }

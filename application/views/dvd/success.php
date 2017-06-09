@@ -1,12 +1,13 @@
 <html>
 <head>
-<title>My Form</title>
+    <title>Ajout de Film</title>
+    <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/bootstrap.min.css">
+    <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/style.css">
 </head>
 <body>
+<h3>Ajout Reussi :) :) :)</h3>
 
-<h3>Your form was successfully submitted!</h3>
-
-<p><?php echo anchor('dvd/add', 'Try it again!'); ?></p>
+<p><?php echo anchor('index.php/dvd/add', 'Recommencez ;)'); ?></p>
 
 </body>
 </html>
